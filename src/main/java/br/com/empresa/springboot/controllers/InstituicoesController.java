@@ -2,6 +2,7 @@ package br.com.empresa.springboot.controllers;
 
 import java.util.List;
 
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -14,11 +15,12 @@ import br.com.empresa.springboot.repositorios.RepositorioInstituicao;
 @RequestMapping("/instituicoes")
 public class InstituicoesController {
 
+	@Autowired
 	private RepositorioInstituicao repositorioInstituicao;
 	
 	@GetMapping("/index")
 	public ModelAndView index() {
-		ModelAndView resultado = new ModelAndView("instituicao/index");
+		ModelAndView resultado = new ModelAndView("/instituicao/index");
 		List<Instituicao> instituicoes = repositorioInstituicao.findAll();
 		resultado.addObject("instituicoes", instituicoes);
 		return resultado;		
