@@ -9,7 +9,7 @@
 
 	<div th:replace="fragmentos/fragmentos :: header"></div>
 	
-		<div class="container"></div>
+		<div class="container">
 			<h2>Cadastro de nova instituição</h2>
 			<form class="form-horizontal" action="/instituicoes/inserir" method="post" th:object="${instituicao}">
 			<div class="row">
@@ -26,6 +26,7 @@
 			</div>
 			<input type="submit" value="Salvar" class="btn btn-secondary"/>
 			</form>
+		</div>
 	<div th:replace="fragmentos/fragmentos :: footer"></div>
 	<script type="text/javascript" src="/webjars/jquery/3.1.1-1/jquery.min.js"></script>
 </body>
