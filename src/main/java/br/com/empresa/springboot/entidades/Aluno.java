@@ -1,28 +1,26 @@
 package br.com.empresa.springboot.entidades;
 
-import java.util.Set;
-
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
-import javax.persistence.OneToMany;
+import javax.persistence.ManyToOne;
 
 @Entity
-public class Instituicao {
+public class Aluno {
 
 	@Id
 	@GeneratedValue
 	private Long id;
 	
-	@Column(length = 10)
+	@Column(length = 50)
 	private String nome;
 	
-	@Column(length = 100)
-	private String endereco;
+	@Column(precision = 0)
+	private int idade;
 	
-	@OneToMany(mappedBy = "instituicao")
-	private Set<Aluno> alunos;
+	@ManyToOne
+	private Instituicao instituicao;
 
 	public Long getId() {
 		return id;
@@ -40,12 +38,19 @@ public class Instituicao {
 		this.nome = nome;
 	}
 
-	public String getEndereco() {
-		return endereco;
+	public int getIdade() {
+		return idade;
 	}
 
-	public void setEndereco(String endereco) {
-		this.endereco = endereco;
+	public void setIdade(int idade) {
+		this.idade = idade;
 	}
-	
+
+	public Instituicao getInstituicao() {
+		return instituicao;
+	}
+
+	public void setInstituicao(Instituicao instituicao) {
+		this.instituicao = instituicao;
+	}
 }
