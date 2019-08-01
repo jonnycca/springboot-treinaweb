@@ -12,6 +12,7 @@
 		<h2>Editar de aluno</h2>
 		<form class="form-horizontal" action="/alunos/editar"
 			method="post" th:object="${aluno}">
+			<input type="hidden" th:field="*{id}"/>
 			<div class="row">
 				<div class="form-group col-md-6">
 					<label for="txt-nome">Nome do aluno:</label> <input type="text"
