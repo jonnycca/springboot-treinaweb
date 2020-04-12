@@ -6,6 +6,7 @@ import org.springframework.data.jpa.repository.JpaRepository;
 
 import br.com.empresa.springboot.entidades.Instituicao;
 
+@repository
 public interface RepositorioInstituicao extends JpaRepository<Instituicao, Long>{
 
 	List<Instituicao> findByNomeContaining(String nome);
